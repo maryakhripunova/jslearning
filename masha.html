@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="./lib.js"></script>
+    <link rel="stylesheet" href="./masha.css">
+    <script>
+        let calculate = () => {
+            let node = document.createElement("input")
+
+            node.type = "number";
+            node.id = "result";
+            node.readonly = true;
+            document.getElementsByTagName("form")[0].appendChild(node);
+
+
+            let c2b = Number(document.getElementById("c2b").value);
+            let b2d = Number(document.getElementById("b2d").value);
+            let c2d = Number(document.getElementById("c2d").value)
+            node.value = profit(c2b, b2d, c2d);
+            node.style.backgroundColor = "green";
+            // alert(c2b.value);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>привет, Маша!</h1>
+    <form>
+        <label for="c2b" class="param">Какова стоимость подряда компании С для компании В?</label>
+        <input type="number" value="10e6" id="c2b" step="1e6">
+        <br>
+        <label for="b2d" class="param">Какова стоимость подряда компании B для компании D?</label>
+        <input type="number" value="3e6" id="b2d" step="1e6">
+        <br>
+        <label for="c2d" class="param">Какова стоимость подряда компании C для компании D?</label>
+        <input type="number" value="4e6" id="c2d" step="1e6">
+        <br>
+        <button type="button" onclick="calculate()">Рассчитать</button>
+        <br>
+        <label for="result" class="result">Результат</label>
+        <!-- <input type="number" id="result" readonly> -->
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+form label {
+    border-style: dotted;
+    border-color: black;
+}
+
+label.param {
+    background-color: aqua;
+}
+
+label.result {
+    background-color: blueviolet;
+}
